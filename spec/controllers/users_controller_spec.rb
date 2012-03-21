@@ -16,7 +16,7 @@ describe UsersController do
     before do
       sign_in @user = Factory(:user)
     end
-    
+
     it "should set a time zone" do
       Time.zone.should.to_s == @user.time_zone
     end
@@ -73,10 +73,15 @@ describe UsersController do
           put :update, :id => @user.to_param, :user => {:per_page => 555}
           @user.reload.per_page.should == 555
         end
-        
+
         it "should be able to set time_zone option" do
           put :update, :id => @user.to_param, :user => {:time_zone => "Warsaw"}
           @user.reload.time_zone.should == "Warsaw"
+        end
+
+        it "should be able to set github_login option" do
+          put :update, :id => @user.to_param, :user => {:github_login => "awesome_name"}
+          @user.reload.github_login.should == "awesome_name"
         end
       end
 
@@ -226,7 +231,6 @@ describe UsersController do
         request.flash[:success].should include('no longer part of your team')
       end
     end
-
   end
-end
 
+end

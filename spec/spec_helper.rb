@@ -13,7 +13,6 @@ Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 RSpec.configure do |config|
   config.mock_with :rspec
   config.include Devise::TestHelpers, :type => :controller
-
   config.filter_run :focused => true
   config.run_all_when_everything_filtered = true
   config.alias_example_to :fit, :focused => true

@@ -22,4 +22,3 @@ user.username = admin_username if Errbit::Config.user_has_username
 
 user.admin = true
 user.save!
-

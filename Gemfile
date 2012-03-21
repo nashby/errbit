@@ -7,6 +7,8 @@ gem 'mongoid', '2.1.2'
 gem 'haml'
 gem 'htmlentities', "~> 4.3.0"
 gem 'devise', '~> 1.4.0'
+gem 'omniauth-github'
+gem 'oa-core'
 gem 'lighthouse-api'
 gem 'oruen_redmine_client', :require => 'redmine_client'
 gem 'mongoid_rails_migrations'
@@ -41,6 +43,8 @@ group :development, :test do
 end
 
 group :test do
+  gem 'capybara'
+  gem 'launchy'
   gem 'rspec', '~> 2.6'
   gem 'database_cleaner', '~> 0.6.0'
   gem 'email_spec'

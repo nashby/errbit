@@ -9,6 +9,10 @@ if ENV['HEROKU']
   Errbit::Config.email_at_notices = [1,3,10] #ENV['ERRBIT_EMAIL_AT_NOTICES']
   Errbit::Config.confirm_resolve_err = ENV['ERRBIT_CONFIRM_RESOLVE_ERR']
 
+  Errbit::Config.github_authentication = ENV['GITHUB_AUTHENTICATION']
+  Errbit::Config.github_client_id = ENV['GITHUB_CLIENT_ID']
+  Errbit::Config.github_secret = ENV['GITHUB_SECRET']
+
   Errbit::Config.smtp_settings = {
     :address        => "smtp.sendgrid.net",
     :port           => "25",
